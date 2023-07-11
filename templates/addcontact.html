@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body>
+    {% if 'email' in session %}
+    {% include 'nav.html' %}
+    <div class="container">
+    <h1 class="text-center fst-italic mt-1 mb-4">Call Easy</h1>
+    <form action="{{ url_for('addcontact', email=session['email']) }}" method="POST">
+      <div class="mb-3">
+        <label for="contactname" class="form-label">Contact Name</label>
+        <input type="text" class="form-control" id="contactname" aria-describedby="emailHelp" name="contact_name">
+      </div>
+      <div class="mb-3">
+        <label for="contactnumber" class="form-label">Contact Number</label>
+        <input type="tel" class="form-control" id="contactnumber" name="contact_number">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>  
+  
+  </div>
+  {% include 'footer.html' %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  {% endif %}
+</body>
+</html>

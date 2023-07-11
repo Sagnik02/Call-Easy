@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Call Easy Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+         #poster{
+        height: 360px;
+        object-fit:cover;
+        width:100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    {% if 'email' in session %}
+    {% include 'nav.html' %}
+    <div class="container">
+
+      <h1 class="text-center fst-italic mt-4 mb-4">Call Easy</h1>
+      
+    <img src="https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="" class="img-fluid" id="poster">
+    
+
+    <h2 class="text-center mt-4 mb-4 ">About Call Easy</h2>
+    <p class="lead">
+  
+
+       Call Easy is a user-friendly contact management app that simplifies your communication experience.
+       It allows you to save and organize your contacts effortlessly, making it easy to find and call them whenever needed. With features like smart organization, efficient calling, favorites, and speed dial, 
+       Call Easy ensures a seamless and quick connection with your contacts. The app's user-friendly interface and powerful search capabilities further enhance your contact management process, making Call Easy the ultimate solution for saving and calling your contacts with ease.    </p>
+    </div>
+       {% include 'footer.html' %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    {% endif %}
+  </body>
+</html>
