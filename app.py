@@ -15,7 +15,7 @@ app.permanent_session_lifetime = timedelta(minutes=5)
 def get_database():
   # Replace the placeholders with your actual MongoDB connection details
   uri = os.environ['DB_CONNECTION_STRING']
-  # Create a new client and connect to the server
+  # Create a new cient and connect to the server
   client = MongoClient(uri, server_api=ServerApi('1'))
   return client['UserDetails']
 
